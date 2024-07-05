@@ -1,16 +1,71 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Podkova:wght@400..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@300;400;500;600;700;800;900&family=Podkova:wght@400..800&display=swap");
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.playfair-display {
+  font-family: "Playfair Display", serif;
+}
+
+.inknut {
+  font-family: "Inknut Antiqua", serif;
+}
+
+.podkova {
+  font-family: "Podkova", serif;
+}
+
+.black-shadow-down {
+  box-shadow: 0px 5px 20px rgb(103, 103, 103);
+}
+.black-shadow-up {
+  box-shadow: 0px -5px 20px rgb(103, 103, 103);
+}
+
+.hide-arrows::-webkit-inner-spin-button,
+.hide-arrows::-webkit-outer-spin-button {
+  appearance: none;
+}
+
+@media (width < 1290px) {
+  .signup-img {
+    width: 500px;
+    height: 500px;
+  }
+  .signup-img-top-div {
+    top: 28%;
+  }
+}
+
+@media (width < 1010px) {
+  .signup-img {
+    display: none;
+  }
+  .signup-img-top-div {
+    justify-content: center;
+    height: 440px;
+  }
+}
+
+@media (width < 732px) {
+  .bottom-right-triangle{
+    bottom: 62px;
+  }
 }

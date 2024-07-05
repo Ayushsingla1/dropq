@@ -8,11 +8,9 @@ import Sign from './Pages/Sign';
 import Login from './Pages/Login';
 import Homepage from './Pages/Homepage';
 import Orders from './Pages/Orders';
-import Navbar from './Components/Nav';
 function App() {
   return (
-    <div>
-      <Navbar></Navbar>
+    <div className=''>
       <Routes>
         <Route path='/' element = {<Homepage/>}>
         <Route index element={<Home/>}/>
@@ -23,6 +21,7 @@ function App() {
         <Route path = "/Touch"element = {<Touch/>}/>
         </Route>
       </Routes>
+
     </div>
   );
 }
