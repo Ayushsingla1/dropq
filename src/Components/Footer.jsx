@@ -3,7 +3,7 @@ import myimage from "../Screenshot 2024-07-03 204954.png"
 
 const Footer = () => {
     return ( 
-        <div className="w-full fixed bottom-0 black-shadow-up h-[205px] flex flex-col justify-between bg-[#3E362E]">
+        <div className="w-full black-shadow-up h-[205px] flex flex-col justify-between bg-[#3E362E]">
             <div className="flex justify-between items-start">
                 <div><img src = {myimage} alt="LOGO" className="bg-contain mix-blend-color-burn h-[90px] object-cover"></img></div>
                 <div className="flex gap-[90px] mr-[50px]">
