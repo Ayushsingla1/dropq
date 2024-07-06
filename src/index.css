@@ -65,7 +65,26 @@ code {
 }
 
 @media (width < 732px) {
-  .bottom-right-triangle{
+  .bottom-right-triangle {
     bottom: 62px;
+  }
+}
+
+@media (width < 800px) {
+  .dish-card-top-div {
+    flex-direction: column;
+    width: 400px;
+  }
+  .dish-card-top-div img {
+    width: 400px;
+    height: 300px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+  .dish-card-top-div div:nth-child(2) {
+    width: 100%;
+  }
+  .dish-card-top-div div:nth-child(2) div:nth-child(1) {
+    align-self: center;
   }
 }
