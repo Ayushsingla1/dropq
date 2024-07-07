@@ -53,8 +53,8 @@ const Touch = ()=>{
                 </div>
                 <div className="text-[#3E362E] text-3xl font-semibold">Additional Office Locations</div>
                 <div className="flex flex-col gap-y-4">
-                <div className="text-white text-xl">INDIA</div>
-                <div className="text-white text-xl">Raman Hostel , NSUT , Dwarka , Delhi</div>
+                    <div className="text-white text-xl">INDIA</div>
+                    <div className="text-white text-xl">Raman Hostel , NSUT , Dwarka , Delhi</div>
                 </div>
                 </div>
                 <div>
