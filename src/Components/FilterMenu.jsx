@@ -1,13 +1,16 @@
 import { useState } from "react";
+import { useSetRecoilState } from "recoil";
+import { searchFilterAtom } from "../atom store/FitlerAtom";
 
 const FilterMenu = ({restaurant}) => {
     const [searchFor, setSearchFor] = useState("");
+    const setSearchFilter = useSetRecoilState(searchFilterAtom)
     const changeHandeler = (e) => {
         setSearchFor(e.target.value)
     }
     const clickHandeler = (e) => {
         e.preventDefault();
-        //get req to backend
+        setSearchFilter(searchFor);
         console.log(searchFor)
     }
 

@@ -9,7 +9,7 @@ const DishCard = ({dish, id, menuid}) => {
     const carthub = useSetRecoilState(cart);
     const cartval = useRecoilValue(cart);
     const addHandler = (id)=>{
-      carthub(c => {return [...c,{id : id , count : 1}]})
+      carthub(c => {return [...c,{id : id , count : 1, dish: dish}]})
     }
 
 
@@ -22,7 +22,7 @@ const DishCard = ({dish, id, menuid}) => {
                 <div className='text-[22px] playfair-display text-white font-semibold mt-3'>Rs {dish.price}</div>
                 <div className='flex justify-between items-center'>
                     <Category category = {dish.category} />
-                    {cartval.some(x => (x.id===dish.id && x.count > 0)) ? (<Counter id = {dish.id}></Counter>): (<button className='py-2 px-4 text-[18px] rounded-[10px] font-semibold bg-[#FFE4BE] text-[#3E362E] playfair-display flex justify-center items-center' onClick={()=>addHandler(dish.id)}>Add to cart</button>)}
+                    <div className='h-[42px]'>{cartval.some(x => (x.id===dish.id && x.count > 0)) ? (<Counter dish = {dish} id = {dish.id}></Counter>): (<button className='py-2 px-4 text-[18px] rounded-[10px] font-semibold bg-[#FFE4BE] text-[#3E362E] playfair-display flex justify-center items-center' onClick={()=>addHandler(dish.id)}>Add to cart</button>)}</div>
                 </div>
             </div>
         </div>
