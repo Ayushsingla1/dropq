@@ -11,6 +11,7 @@ import Orders from './Pages/Orders';
 import Restro from './Pages/Restro';
 import NotFound from './Pages/NotFound';
 import Menu from './Pages/Menu';
+import Checkout from './Pages/Checkout';
 function App() {
   return (
     <div className=''>
@@ -21,6 +22,7 @@ function App() {
         <Route path = "/Login" element = {<Login/>}/>
         <Route path = "/Sign" element = {<Sign/>}/>
         <Route path = "/Orders" element = {<Orders/>}/>
+        <Route path = "/Orders/Checkout" element = {<Checkout/>}/>
         <Route path = "/Touch" element = {<Touch/>}/>
         <Route path = "/Restro/:id" element = {<Restro/>}/>
         <Route path = "/Restro/:id/Menu/:menuid" element = {<Menu/>}/>

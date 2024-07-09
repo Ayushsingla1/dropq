@@ -1,14 +1,29 @@
-const DishCard = ({dish}) => {
+import bholeChature from '../assets/bhole chature.jpg'
+import Category from './Category';
+import { cart } from '../atom store/CartAtom';
+import { useSetRecoilState, useRecoilValue } from 'recoil';
+import Counter from './Counter';
 
-    const description = dish.description.slice(100) + "...";
+const DishCard = ({dish, id, menuid}) => {
+
+    const carthub = useSetRecoilState(cart);
+    const cartval = useRecoilValue(cart);
+    const addHandler = (id)=>{
+      carthub(c => {return [...c,{id : id , count : 1, dish: dish}]})
+    }
+
 
     return ( 
-        <div className="flex hover:scale-105 transition-all dish-card-top-div rounded-[10px] gap-x-5 w-[680px] bg-[#FFE4BE]">
-            <div><img className="w-[250px] h-[200px] rounded-tl-[10px] rounded-bl-[10px] " src={dish.image} alt={dish.name}/></div>
-            <div className="flex flex-col justify-between py-3 items-center gap-y-3 pr-2 w-7/12">
-                <div className=" self-start inknut font-semibold text-[24px]">{dish.name}</div>
-                <div className="playfair-display opacity-80">{description}</div>
-                <button className=" self-end bg-[#3E362E] py-1 px-4 text-white playfair-display font-semibold rounded-[10px]">View Items</button>
+        <div className='w-4/12 max-w-[350px] flex flex-col rounded-[15px] gap-y-2 bg-[#3E362E]'>
+            <div><img className='h-[220px] w-[350px] rounded-t-[15px]' src={bholeChature} alt={dish.item} /></div>
+            <div className='flex px-5 pb-5 flex-col'>
+                <div className='text-white text-[28px] inknut'>{dish.item}</div>
+                <div className='text-[16px] text-white opacity-75'>{dish.description}</div>
+                <div className='text-[22px] playfair-display text-white font-semibold mt-3'>Rs {dish.price}</div>
+                <div className='flex justify-between items-center'>
+                    <Category category = {dish.category} />
+                    <div className='h-[42px]'>{cartval.some(x => (x.id===dish.id && x.count > 0)) ? (<Counter dish = {dish} id = {dish.id}></Counter>): (<button className='py-2 px-4 text-[18px] rounded-[10px] font-semibold bg-[#FFE4BE] text-[#3E362E] playfair-display flex justify-center items-center' onClick={()=>addHandler(dish.id)}>Add to cart</button>)}</div>
+                </div>
             </div>
         </div>
      );

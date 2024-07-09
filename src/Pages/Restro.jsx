@@ -1,13 +1,13 @@
 // import { useState } from "react";
 // import { useEffect } from "react";
-// import { useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Navbar from "../Components/Nav";
 import Footer from "../Components/Footer";
 import { data2 } from "../assets/data2";
-import DishCard from "../Components/DishCard";
+import RestroCard from "../Components/RestroCard";
 
 const Restro = ()=>{
-    // const {id} = useParams();
+    const {id} = useParams();
 
     // const [menu, setMenu] = useState([]);
     const menu = data2
@@ -38,7 +38,7 @@ const Restro = ()=>{
                     {
                         menu.map((dish, index) => {
                             return(
-                                <DishCard key={index} dish={dish}/>
+                                <RestroCard id={id} key={index} dish={dish}/>
                             )
                         })
                     }
